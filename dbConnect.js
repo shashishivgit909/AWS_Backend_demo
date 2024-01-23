@@ -6,7 +6,7 @@ const mongoose= require('mongoose');
 
 const Connection = async() => {
 
-    const URL="mongodb+srv://mahadeva:enterprises@db.tni5m4w.mongodb.net/";
+    const URL="mongodb+srv://shashishiv26:shashi123@cluster0.gbse4fk.mongodb.net/E-com?retryWrites=true&w=majority";
         try {
             await mongoose.connect(URL, { useNewUrlParser: true,useUnifiedTopology:true, })
             console.log('Database connected successfully');
