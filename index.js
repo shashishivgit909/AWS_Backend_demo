@@ -7,7 +7,7 @@ app.use(express.json());
 
 
 //this is sign up API : data(registration detail of a user)  save  to database which is coming from signUP (react)
-app.post("/register", async (req, res) => {
+app.post("api/register", async (req, res) => {
 
     const user = new User(req.body); /* In this line, a new user object is created based on the data received in the HTTP request (req.body). 
     The assumption here is that User is a Mongoose model or schema that defines the structure and behavior of user documents in the MongoDB database.
@@ -25,7 +25,7 @@ app.post("/register", async (req, res) => {
 
 // NOte://way to use JWT authentication in API is hown below in this API
 //Note:post() method is always used for login API for security purpose.(but there is nothing to save to dtabsse in this API)
-app.post("/login", async (req, res) => {
+app.post("api/login", async (req, res) => {
     //  now we want that if both req.body.email and req.body.password are given then only this serach opreation and rest will be be done for that we use below condition.
     if (req.body.email && req.body.password) {
         let user = await User.findOne(req.body).select("-password");  //finds req.body sent by postman or react in database and return record if found by eliminating password , else return error.
