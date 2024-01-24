@@ -44,4 +44,11 @@ app.post("api/login", async (req, res) => {
 
 
 })
+
+//api for listing product : find  all doc from collection: Products and send it  as response.
+app.get("/products", async (req, resp) => {
+
+    let products = await Product.find(); // this gives arrays of all documeents in Products collection.
+    products.length > 0 ? resp.send(products) : resp.send({ result: "No products found" });
+})
 app.listen(5000);
