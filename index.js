@@ -50,4 +50,4 @@ app.get("/", async (req, resp) => {
     console.log("hello world");
     resp.send("hello world");
 })
-app.listen(`app is listening on ${5000}`);
+app.listen(`app is listening on 5000`);
